@@ -1,0 +1,68 @@
+<!--
+  Copyright 2022 Thomptronics
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+  http://www.apache.org/licenses/LICENSE-2.0
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<script type="text/x-red" data-template-name="notify-me">
+    <div class="form-row">
+        <label for="node-input-accessCode"><i class="fa fa-lock"></i> Access Code</label>
+        <input type="password" id="node-input-accessCode">
+    </div>
+    <div class="form-row">
+        <label for="node-input-notification"><i class="fa fa-bell"></i> Notification</label>
+        <input type="text" id="node-input-notification">
+    </div>
+    <div class="form-row">
+        <label for="node-input-title"><i class="fa fa-header"></i> Title</label>
+        <input type="text" id="node-input-title">
+    </div>
+    <br>
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name"
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="notify-me">
+    <p>A Node-RED node to send Alexa Notifications using the <a target="_blank" href="https://www.amazon.com/Thomptronics-Notify-Me/dp/B07BB2FYFS">Notify Me skill</a> by Thomptronics.</p>
+    <p>See this link for detailed information: <a target="_blank" href="http://www.notifymyecho.com">www.notifymyecho.com</a></p>
+    <p><strong>Access Code:</strong><br/>
+    See the this <a target="_blank" href="http://www.notifymyecho.com">link</a> for how to get your own secure access code. This code is <i>required</i>.
+    <p><strong>Notification:</strong><br/>
+    The notification string you want to send. This is <i>required</i>, since there would be no point in sending an empty notification.</p>
+    <p>A notification found in the node's Properties tab will override one passed in <code>msg.payload</code>, so be sure to empty this Properties field if you want to pass your notification via the payload.</p>
+    <p><strong>Title:</strong><br/>
+    This title appears on Echo Show screens when the notification arrives. A title passed in <code>msg.topic</code> will override any title found in the node's Properties tab.</p>
+    <p>A title is optional and, if not specified by either <code>msg.topic</code> or the Properties tab, defaults to "Notification from Yourself."</p>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType("notify-me", {
+        category: 'function',
+        color:"#99A3E8FF",
+        defaults: {
+            name: {value:""},
+            title: {value:""},
+            notification: {value:""}
+        },
+        credentials: {
+            accessCode: {type: "password", required: false}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "logo256x256.png",
+        "label": function() {
+          return this.name || this.notification || "notify me";
+        },
+        "paletteLabel": function() {
+          return "notify me"
+        }
+    });
+</script>

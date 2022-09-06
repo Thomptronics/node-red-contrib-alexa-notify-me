@@ -1,0 +1,37 @@
+{
+    "name": "@thomptronics/node-red-contrib-alexa-notify-me",
+    "version": "1.0.0",
+    "description": "A Node-RED node to send Alexa Notifications via the Notify Me skill by Thomptronics",
+    "dependencies": {
+        "request": "2.88.0"
+    },
+    "author": {
+        "name": "Thomptronics",
+        "url": "https://www.thomptronics.com",
+        "email": "info@thomptronics.com"
+    },
+    "license": "Apache-2.0",
+    "keywords": [
+        "node-red",
+        "alexa",
+        "echo",
+        "notification",
+        "notify",
+        "alert",
+        "www.notifymyecho.com"
+    ],
+    "bugs": {
+        "url": "https://github.com/Thomptronics/node-red-contrib-alexa-notify-me/issues"
+    },
+    "homepage": "https://github.com/Thomptronics/node-red-contrib-alexa-notify-me",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Thomptronics/node-red-contrib-alexa-notify-me.git"
+    },
+    "node-red": {
+        "version": ">=1.3.0",
+        "nodes": {
+            "notify-me": "alexa-notify-me.js"
+        }
+    }
+}

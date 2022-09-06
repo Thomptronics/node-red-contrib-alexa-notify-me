@@ -1,0 +1,87 @@
+[
+    {
+        "id": "66f244c7099a0e6d",
+        "type": "tab",
+        "label": "Alexa Notify Me",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "d6a18213066005c6",
+        "type": "notify-me",
+        "z": "66f244c7099a0e6d",
+        "name": "",
+        "title": "Greetings from Node-RED",
+        "notification": "",
+        "x": 300,
+        "y": 160,
+        "wires": [
+            [
+                "6b53158ace42fb38"
+            ]
+        ]
+    },
+    {
+        "id": "df7c875d569b70e7",
+        "type": "inject",
+        "z": "66f244c7099a0e6d",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "Hello World",
+        "payloadType": "str",
+        "x": 130,
+        "y": 160,
+        "wires": [
+            [
+                "d6a18213066005c6"
+            ]
+        ]
+    },
+    {
+        "id": "6b53158ace42fb38",
+        "type": "debug",
+        "z": "66f244c7099a0e6d",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 450,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "4e8a327792b14c89",
+        "type": "comment",
+        "z": "66f244c7099a0e6d",
+        "name": "Press the 'Hello World' inject button below to send a notification to your Alexa devices...",
+        "info": "",
+        "x": 340,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "a0bc665065b873b1",
+        "type": "comment",
+        "z": "66f244c7099a0e6d",
+        "name": "Prerequisites (double click on this to view)",
+        "info": " Before you can use this node, you must:\n - Enable the Notify Me skill by Thomptronics\n - Launch the skill to trigger your access code email\n - Enter your Access Code in the node's Properties tab\n \nPlease visit www.notifymyecho.com for details\n ",
+        "x": 200,
+        "y": 40,
+        "wires": []
+    }
+]
